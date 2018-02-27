@@ -1,0 +1,24 @@
+#!/usr/bin/expect
+
+set timeout 1; set user "root"; set password "macbox";
+set path "/var/log/update_script.log";
+
+log_user 0;
+
+spawn su $user;
+
+expect "Mot de passe:";
+
+send "$password\r";
+
+send "touch $path\r";
+
+send "date >> $path\r";
+
+send "apt-get update >> $path\r";
+
+send "apt-get upgrade >> $path\r";
+
+send "exit\r";
+
+interact

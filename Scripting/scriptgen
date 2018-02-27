@@ -1,0 +1,8 @@
+#!/bin/bash
+
+printf "Un nouveau script $USER ? Son nom :"
+{ read nom ;\
+ echo "#!/bin/bash" >> $nom ;\
+ chmod 777 $nom ;\
+ mv ~/$nom ~/MesScripts ;\
+ vim ~/MesScripts/$nom ;}

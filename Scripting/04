@@ -1,0 +1,19 @@
+#!/bin/bash
+
+md5sum /etc/crontab >> md5sum.txt
+
+md5sum -c md5sum.txt > tes.txt
+
+awk -F " " '{ print $2 }' tes.txt > stock.txt
+
+var=`head -c 1 stock.txt`
+var2="R"
+
+if [ "$var" != "$var2" ]; then
+	echo -e "crontab was modified !" | mail -s 'crontab' root
+fi
+
+md5sum /etc/crontab > md5sum.txt
+
+rm -rf stock.txt
+rm -rf tes.txt
