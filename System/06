@@ -1,1 +1,2 @@
-/etc/init.d/ssh restart
+service ssh restart
+(su mode)

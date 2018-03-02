@@ -1,3 +1,2 @@
-iptables -P INPUT DROP
-iptables -P FORWARD DROP
-iptables -P OUTPUT DROP
+iptables -A INPUT -p all -j DROP
+(su mode)

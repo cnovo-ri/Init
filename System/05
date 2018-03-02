@@ -1,1 +1,2 @@
-/etc/init.d/ssh status
+service ssh status
+(su mode)
