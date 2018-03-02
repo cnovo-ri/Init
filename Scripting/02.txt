@@ -1,4 +1,0 @@
-Commande pour tache plannifiée : (adapter le path)
-
-crontab -e
-0 4 * * 0 /home/debianvm/MesScripts/02

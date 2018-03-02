@@ -1,24 +1,18 @@
-#!/usr/bin/expect
+#!/bin/bash
 
-set timeout 1; set user "root"; set password "macbox";
-set path "/var/log/update_script.log";
+# etre en root
 
-log_user 0;
+var="/var/log/update_script.log"
 
-spawn su $user;
+touch $var
 
-expect "Mot de passe:";
+date >> $var
 
-send "$password\r";
+apt-get update >> $var
 
-send "touch $path\r";
+apt-get upgrade >> $var
 
-send "date >> $path\r";
+#commande pour tache plannifiee :
 
-send "apt-get update >> $path\r";
-
-send "apt-get upgrade >> $path\r";
-
-send "exit\r";
-
-interact
+#crontab -e
+#0 4 * * 0 /home/debianvm/Init/Scripting/02

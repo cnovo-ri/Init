@@ -17,3 +17,8 @@ md5sum /etc/crontab > md5sum.txt
 
 rm -rf stock.txt
 rm -rf tes.txt
+
+#commande pour tache plannifiee :
+
+#crontab -e
+#0 0 * * * /home/debianvm/Init/Scripting/04
